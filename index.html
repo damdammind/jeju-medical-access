@@ -10,29 +10,30 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="preload" href="fonts/A2Z-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* Hallmark · built: the project · redesign: restyle · theme: Dose (deal: manual, picked on fit: health, clinic, elderly, care) · dose: white · genre: modern-minimal · shape: app screen · scope: app · v2.0.0
- * pre-emit critique: P3 H4 E4 S4 R4 V4 · weakest: P, a restyle keeps the layout's argument; the one new idea is the four headline figures set as tinted compartments of a pill organiser
- * waive 66 · the HTML v1.2 label sits in the top bar, not a hero · the owner's changelog makes this on-screen version label the release marker
- * faces: A2Z (the owner's font, standing in for Schibsted Grotesk and Instrument Sans) · IBM Plex Mono for code, logs and tool names only */
+/* 색: stripe.md의 밝은 팔레트 (캔버스 흰색·옅은 청회색 바탕, 남색 글자, 인디고 강조, 위쪽 그라디언트 메시)
+ * 모양: 이전 판 그대로 (10px 키 버튼, 14px 카드, 에이투지체) · 코드·로그만 IBM Plex Mono */
 @font-face { font-family: "A2Z"; src: url("fonts/A2Z-300.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
 @font-face { font-family: "A2Z"; src: url("fonts/A2Z-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "A2Z"; src: url("fonts/A2Z-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
 @font-face { font-family: "A2Z"; src: url("fonts/A2Z-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
 @font-face { font-family: "A2Z"; src: url("fonts/A2Z-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
-/* ───── 토큰: 밝은 아침 종이, 초록-검정 잉크, 약국 초록 하나 ───── */
+/* ───── 토큰: Stripe 밝은 색 + 이전 판의 모양·간격 ───── */
 :root {
-  --color-paper: oklch(97.6% 0.011 88); --color-paper-2: oklch(96.5% 0.02 160); --color-paper-3: oklch(93% 0.036 160);
-  --color-surface: oklch(99.5% 0.004 88);
-  --color-ink: oklch(21% 0.025 170); --color-ink-2: oklch(33% 0.02 170); --color-muted: oklch(49% 0.024 165);
-  --color-rule: oklch(88% 0.02 140); --color-rule-2: oklch(92.5% 0.014 120);
-  --color-accent: oklch(50% 0.13 160); --color-accent-deep: oklch(42% 0.11 162); --color-accent-soft: oklch(90% 0.07 160); --color-accent-ink: oklch(99% 0.006 160);
-  --color-focus: oklch(45% 0.14 160); --color-glint: oklch(100% 0.002 88);
-  --kpi-tray: #f6f9fc; --kpi-card: #ffffff; --kpi-line: #e3e8ee; --kpi-shadow: 0 1px 3px rgba(0,55,112,0.08);
-  --color-series-1: oklch(50% 0.13 160); --color-series-2: oklch(64% 0.15 52); --color-series-3: oklch(52% 0.12 250); --color-series-other: oklch(72% 0.015 160);
-  --color-crit: oklch(52% 0.17 28); --color-serious: oklch(62% 0.14 48); --color-warn: oklch(76% 0.13 85); --color-good: oklch(52% 0.13 155);
-  --color-log-ok: oklch(85% 0.11 160); --color-log-bad: oklch(80% 0.1 40);
-  --color-shade: oklch(30% 0.03 165 / 0.08); --color-shade-2: oklch(40% 0.08 165 / 0.22);
+  --color-paper: #f6f9fc; --color-paper-2: #f1f0ff; --color-paper-3: #e9eef5;
+  --color-surface: #ffffff;
+  --color-ink: #0d253d; --color-ink-2: #273951; --color-muted: #64748d;
+  --color-rule: #e3e8ee; --color-rule-2: #eef2f6; --color-input: #a8c3de;
+  --color-accent: #533afd; --color-accent-deep: #4434d4; --color-press: #2e2b8c; --color-accent-soft: #e7e5ff; --color-accent-ink: #ffffff;
+  --color-tag: #b9b9f9; --color-cream: #f5e9d4; --color-navy: #1c1e54; --color-on-navy: #e8e9ff;
+  --color-focus: #533afd; --color-glint: #ffffff;
+  --mesh-cream: #f5e9d4; --mesh-orange: #ffa36f; --mesh-lavender: #b9b9f9; --mesh-indigo: #6650ff; --mesh-ruby: #ff5c8a; --mesh-magenta: #f96bee; --mesh-fade: #f6f9fc; --mesh-op: 1;
+  --top-glass: rgba(255,255,255,.42);
+  --kpi-tray: rgba(255,255,255,.55); --kpi-card: #ffffff; --kpi-line: #e3e8ee; --kpi-shadow: 0 1px 3px rgba(0,55,112,0.08);
+  --color-series-1: #533afd; --color-series-2: #ea2261; --color-series-3: #ff8a4c; --color-series-other: #a3acb9;
+  --color-crit: #ea2261; --color-serious: #ff7a45; --color-warn: #f2b630; --color-good: #0e9f6e;
+  --color-log-ok: #7ee2b8; --color-log-bad: #ff9ab8;
+  --color-shade: rgba(0,55,112,0.08); --color-shade-2: rgba(0,55,112,0.10);
 
   --font-body: "A2Z", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   --font-display: var(--font-body);
@@ -42,10 +43,9 @@
   --space-3xs: 2px; --space-2xs: 4px; --space-xs: 6px; --space-sm: 8px; --space-md: 12px; --space-lg: 16px; --space-xl: 24px; --space-2xl: 32px; --space-3xl: 48px;
   --radius-xs: 6px; --radius-input: 10px; --radius-card: 14px; --radius-pill: 999px;
   --control-h: 36px; --tracking-display: -0.03em;
-  --shadow-card: 0 1px 2px var(--color-shade), 0 14px 28px -22px var(--color-shade-2);
-  --shadow-lift: 0 1px 1px var(--color-shade), 0 18px 36px -18px var(--color-shade-2);
+  --shadow-card: 0 1px 3px var(--color-shade);
+  --shadow-lift: 0 8px 24px var(--color-shade), 0 2px 6px rgba(0,55,112,0.04);
   --dur-micro: 120ms; --dur-short: 200ms; --ease-out: cubic-bezier(.2, .7, .2, 1);
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .25 0 0 0 0 .3 0 0 0 0 .2 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 
   /* 스크립트가 읽는 이름 (차트·지도·표가 var(--s1) 같은 이름을 씀) */
   --bg: var(--color-paper); --panel: var(--color-surface); --panel2: var(--color-paper-2);
@@ -53,41 +53,45 @@
   --line: var(--color-rule); --line2: var(--color-rule-2);
   --accent: var(--color-accent); --accent-ink: var(--color-accent-ink); --accent-soft: var(--color-accent-soft);
   --s1: var(--color-series-1); --s2: var(--color-series-2); --s3: var(--color-series-3); --s-other: var(--color-series-other);
-  --pos: var(--color-series-3); --neg: var(--color-series-2); --mid: var(--color-paper-3);
+  --pos: var(--color-series-1); --neg: var(--color-series-2); --mid: var(--color-paper-3);
   --good: var(--color-good); --warn: var(--color-warn); --serious: var(--color-serious); --crit: var(--color-crit);
   --f-sans: var(--font-body); --f-mono: var(--font-code);
-  --chat-w: 420px; --chat-user: var(--color-accent-soft); --chat-tool: var(--color-paper-2);
+  --chat-w: 420px; --chat-user: var(--color-accent-soft); --chat-tool: var(--color-paper);
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --color-paper: oklch(15% 0.012 170); --color-paper-2: oklch(19% 0.016 168); --color-paper-3: oklch(23% 0.02 165);
-  --color-surface: oklch(18% 0.014 170);
-  --color-ink: oklch(96% 0.01 160); --color-ink-2: oklch(85% 0.014 160); --color-muted: oklch(70% 0.018 160);
-  --color-rule: oklch(32% 0.02 165); --color-rule-2: oklch(26% 0.018 165);
-  --color-accent: oklch(72% 0.14 160); --color-accent-deep: oklch(80% 0.12 160); --color-accent-soft: oklch(32% 0.06 160); --color-accent-ink: oklch(16% 0.02 165);
-  --color-focus: oklch(78% 0.14 160); --color-glint: oklch(40% 0.02 165);
-  --kpi-tray: oklch(15% 0.012 170); --kpi-card: oklch(19% 0.014 170); --kpi-line: oklch(30% 0.02 165); --kpi-shadow: none;
-  --color-series-1: oklch(72% 0.14 160); --color-series-2: oklch(74% 0.14 55); --color-series-3: oklch(70% 0.11 250); --color-series-other: oklch(50% 0.015 160);
-  --color-crit: oklch(70% 0.16 28); --color-serious: oklch(74% 0.13 50); --color-warn: oklch(82% 0.13 85); --color-good: oklch(74% 0.13 155);
-  --color-shade: oklch(5% 0.01 170 / 0.4); --color-shade-2: oklch(5% 0.01 170 / 0.5);
+  --color-paper: #0a1428; --color-paper-2: #19184a; --color-paper-3: #16223d;
+  --color-surface: #101d36;
+  --color-ink: #eef2f8; --color-ink-2: #c3cddc; --color-muted: #8d9bb3;
+  --color-rule: #24345a; --color-rule-2: #1b2948; --color-input: #3a4d75;
+  --color-accent: #8b7bff; --color-accent-deep: #a597ff; --color-press: #6f5ef0; --color-accent-soft: #2a2766; --color-accent-ink: #0d0b2e;
+  --color-tag: #3b3794; --color-cream: #2d2618; --color-navy: #070e1d; --color-on-navy: #dfe4ff;
+  --color-focus: #a597ff; --color-glint: #24345a;
+  --mesh-op: .35; --mesh-fade: #0a1428; --top-glass: rgba(16,29,54,.72);
+  --kpi-tray: rgba(16,29,54,.6); --kpi-card: #101d36; --kpi-line: #24345a; --kpi-shadow: none;
+  --color-series-1: #8b7bff; --color-series-2: #ff5c8a; --color-series-3: #ffa06b; --color-series-other: #5d6b86;
+  --color-crit: #ff5c8a; --color-serious: #ff9466; --color-warn: #f7c04f; --color-good: #34c88f;
+  --color-shade: rgba(0,0,0,.35); --color-shade-2: rgba(0,0,0,.45);
   color-scheme: dark; } }
 :root[data-theme="dark"] {
-  --color-paper: oklch(15% 0.012 170); --color-paper-2: oklch(19% 0.016 168); --color-paper-3: oklch(23% 0.02 165);
-  --color-surface: oklch(18% 0.014 170);
-  --color-ink: oklch(96% 0.01 160); --color-ink-2: oklch(85% 0.014 160); --color-muted: oklch(70% 0.018 160);
-  --color-rule: oklch(32% 0.02 165); --color-rule-2: oklch(26% 0.018 165);
-  --color-accent: oklch(72% 0.14 160); --color-accent-deep: oklch(80% 0.12 160); --color-accent-soft: oklch(32% 0.06 160); --color-accent-ink: oklch(16% 0.02 165);
-  --color-focus: oklch(78% 0.14 160); --color-glint: oklch(40% 0.02 165);
-  --kpi-tray: oklch(15% 0.012 170); --kpi-card: oklch(19% 0.014 170); --kpi-line: oklch(30% 0.02 165); --kpi-shadow: none;
-  --color-series-1: oklch(72% 0.14 160); --color-series-2: oklch(74% 0.14 55); --color-series-3: oklch(70% 0.11 250); --color-series-other: oklch(50% 0.015 160);
-  --color-crit: oklch(70% 0.16 28); --color-serious: oklch(74% 0.13 50); --color-warn: oklch(82% 0.13 85); --color-good: oklch(74% 0.13 155);
-  --color-shade: oklch(5% 0.01 170 / 0.4); --color-shade-2: oklch(5% 0.01 170 / 0.5);
+  --color-paper: #0a1428; --color-paper-2: #19184a; --color-paper-3: #16223d;
+  --color-surface: #101d36;
+  --color-ink: #eef2f8; --color-ink-2: #c3cddc; --color-muted: #8d9bb3;
+  --color-rule: #24345a; --color-rule-2: #1b2948; --color-input: #3a4d75;
+  --color-accent: #8b7bff; --color-accent-deep: #a597ff; --color-press: #6f5ef0; --color-accent-soft: #2a2766; --color-accent-ink: #0d0b2e;
+  --color-tag: #3b3794; --color-cream: #2d2618; --color-navy: #070e1d; --color-on-navy: #dfe4ff;
+  --color-focus: #a597ff; --color-glint: #24345a;
+  --mesh-op: .35; --mesh-fade: #0a1428; --top-glass: rgba(16,29,54,.72);
+  --kpi-tray: rgba(16,29,54,.6); --kpi-card: #101d36; --kpi-line: #24345a; --kpi-shadow: none;
+  --color-series-1: #8b7bff; --color-series-2: #ff5c8a; --color-series-3: #ffa06b; --color-series-other: #5d6b86;
+  --color-crit: #ff5c8a; --color-serious: #ff9466; --color-warn: #f7c04f; --color-good: #34c88f;
+  --color-shade: rgba(0,0,0,.35); --color-shade-2: rgba(0,0,0,.45);
   color-scheme: dark; }
 
 /* ───── 바탕 ───── */
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html, body { overflow-x: clip; }
-body { margin: 0; background: var(--color-paper) var(--grain); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-base); line-height: 1.55; word-break: keep-all; -webkit-font-smoothing: antialiased; }
+body { margin: 0; position: relative; isolation: isolate; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-base); line-height: 1.55; word-break: keep-all; -webkit-font-smoothing: antialiased; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--color-surface); }
 .wrap { max-width: 1280px; margin: 0 auto; padding-left: max(var(--space-lg), env(safe-area-inset-left, 0px)); padding-right: max(var(--space-lg), env(safe-area-inset-right, 0px)); }
 h1, h2, h3 { margin: 0; font-family: var(--font-display); text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
@@ -99,7 +103,18 @@ a { color: var(--color-accent-deep); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--color-accent); }
 
 /* ───── 위쪽 상태줄 ───── */
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--color-surface); border-bottom: 1px solid var(--color-rule); }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--top-glass); -webkit-backdrop-filter: saturate(160%) blur(14px); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid color-mix(in srgb, var(--color-rule) 70%, transparent); }
+/* Stripe식 그라디언트 메시: 위쪽만, 아래로 갈수록 바탕색으로 사라짐 */
+.mesh { position: absolute; inset: 0 0 auto 0; height: 560px; z-index: -1; overflow: hidden; pointer-events: none; opacity: var(--mesh-op); }
+.mesh::before { content: ""; position: absolute; inset: -30% -10% 0 -10%; filter: blur(56px);
+  background:
+    radial-gradient(36% 58% at 6% 42%, var(--mesh-cream) 0%, transparent 70%),
+    radial-gradient(30% 55% at 24% 30%, var(--mesh-orange) 0%, transparent 70%),
+    radial-gradient(32% 58% at 46% 46%, var(--mesh-lavender) 0%, transparent 72%),
+    radial-gradient(28% 52% at 66% 30%, var(--mesh-indigo) 0%, transparent 70%),
+    radial-gradient(26% 50% at 84% 46%, var(--mesh-ruby) 0%, transparent 70%),
+    radial-gradient(22% 45% at 98% 22%, var(--mesh-magenta) 0%, transparent 70%); }
+.mesh::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 42%, var(--mesh-fade) 96%); }
 .top .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-lg); padding-block: var(--space-md); }
 .brand { display: flex; align-items: baseline; gap: var(--space-sm) var(--space-md); min-width: 0; margin-right: auto; flex-wrap: wrap; }
 .brand h1 { font-size: var(--text-xl); font-weight: 700; letter-spacing: var(--tracking-display); line-height: 1.1; }
@@ -121,14 +136,14 @@ a:hover { text-decoration-color: var(--color-accent); }
 .btn:hover { background: var(--color-paper-2); }
 .btn:active { transform: translateY(2px); box-shadow: inset 0 1px 0 var(--color-glint), 0 0 0 1px var(--color-rule), 0 0 0 var(--color-rule); }
 .btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
-.btn.primary { background: var(--color-accent); color: var(--color-accent-ink); box-shadow: inset 0 1px 0 color-mix(in oklab, var(--color-glint) 35%, transparent), 0 0 0 1px var(--color-accent-deep), 0 2px 0 var(--color-accent-deep); }
+.btn.primary { background: var(--color-accent); color: var(--color-accent-ink); box-shadow: inset 0 1px 0 color-mix(in oklab, var(--color-glint) 35%, transparent), 0 0 0 1px var(--color-press), 0 2px 0 var(--color-press); }
 .btn.primary:hover { background: var(--color-accent-deep); }
-.btn.primary:active { box-shadow: 0 0 0 1px var(--color-accent-deep), 0 0 0 var(--color-accent-deep); }
+.btn.primary:active { box-shadow: 0 0 0 1px var(--color-press), 0 0 0 var(--color-press); }
 .btn.ask { color: var(--color-accent-deep); }
 select.btn { padding-right: var(--space-2xl); }
 
 /* ───── 보기 탭 ───── */
-nav.tabs { background: var(--color-surface); border-bottom: 1px solid var(--color-rule); }
+nav.tabs { background: transparent; border-bottom: 1px solid color-mix(in srgb, var(--color-rule) 70%, transparent); }
 nav.tabs .wrap { display: flex; gap: var(--space-3xs); overflow-x: auto; scrollbar-width: thin; }
 nav.tabs a { padding: var(--space-md) var(--space-md) calc(var(--space-md) - 2px); color: var(--color-ink-2); text-decoration: none; font-weight: 500; white-space: nowrap; border-bottom: 2px solid transparent; transition: color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
 nav.tabs a:hover { color: var(--color-ink); border-bottom-color: var(--color-rule); }
@@ -139,7 +154,7 @@ nav.tabs a[aria-current="page"] { color: var(--color-ink); font-weight: 700; bor
 .ctl { display: flex; flex-direction: column; gap: var(--space-2xs); min-width: 0; }
 .ctl label, .lbl { font-size: var(--text-sm); color: var(--color-ink-2); font-weight: 500; }
 .ctl select, .ctl input, .ch-settings input, .ch-settings select, .gate-card input, .gate-card select, .kb-row input {
-  min-height: var(--control-h); border: 1px solid var(--color-muted); background: var(--color-surface); border-radius: var(--radius-input); padding: 0 var(--space-md); font-size: var(--text-md); max-width: 100%; }
+  min-height: var(--control-h); border: 1px solid var(--color-input); background: var(--color-surface); border-radius: var(--radius-input); padding: 0 var(--space-md); font-size: var(--text-md); max-width: 100%; }
 .ctl select:disabled { opacity: .55; cursor: not-allowed; }
 .ctl select:focus-visible, .ctl input:focus-visible, .ch-form textarea:focus-visible, .gate-card input:focus-visible, .ch-settings input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 1px; }
 .seg { display: inline-flex; gap: var(--space-3xs); padding: var(--space-3xs); border-radius: var(--radius-input); background: var(--color-paper-3); }
@@ -177,7 +192,7 @@ main { padding-bottom: var(--space-3xl); }
 .src { color: var(--color-muted); font-size: var(--text-xs); margin-top: var(--space-md); }
 
 /* ───── 핵심 수치: 약통 칸처럼 칸마다 옅은 색 ───── */
-.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: var(--space-md); padding: var(--space-md); border-radius: calc(var(--radius-card) + 4px); background: var(--kpi-tray); border: 1px solid var(--kpi-line); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: var(--space-md); padding: var(--space-md); border-radius: calc(var(--radius-card) + 4px); background: var(--kpi-tray); border: 1px solid var(--kpi-line); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .kpi { position: relative; border-radius: var(--radius-card); padding: var(--space-lg) var(--space-lg) var(--space-md); display: flex; flex-direction: column; gap: var(--space-2xs); min-width: 0; background: var(--kpi-card); border: 1px solid var(--kpi-line); box-shadow: var(--kpi-shadow); }
 .kpi .k { font-size: var(--text-md); color: var(--color-ink-2); font-weight: 500; }
 .kpi .v { font-size: var(--text-figure); font-weight: 700; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; line-height: 1.1; color: var(--color-ink); }
@@ -186,7 +201,7 @@ main { padding-bottom: var(--space-3xl); }
 .delta { font-size: var(--text-sm); font-weight: 600; font-variant-numeric: tabular-nums; }
 .delta.up { color: var(--neg); } .delta.down { color: var(--pos); } .delta.flat { color: var(--color-muted); }
 .kpi .bar { height: 6px; border-radius: var(--radius-pill); background: color-mix(in oklab, var(--color-ink) 10%, transparent); position: relative; overflow: hidden; margin-top: var(--space-2xs); }
-.kpi .bar > span { position: absolute; inset: 0 auto 0 0; background: var(--color-accent-deep); border-radius: var(--radius-pill); }
+.kpi .bar > span { position: absolute; inset: 0 auto 0 0; background: var(--color-accent); border-radius: var(--radius-pill); }
 
 /* ───── 표 ───── */
 .tbl-wrap { overflow-x: auto; }
@@ -229,7 +244,7 @@ td.heat { position: relative; }
 .legend button { border: 0; background: none; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: var(--space-xs); color: inherit; font-size: var(--text-sm); border-radius: var(--radius-xs); }
 .legend button[aria-pressed="false"] { opacity: .4; }
 
-#tip { position: fixed; z-index: 50; pointer-events: none; background: var(--color-ink); color: var(--color-paper); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-input); font-size: var(--text-sm); line-height: 1.5; max-width: 280px; opacity: 0; transition: opacity 80ms linear; box-shadow: var(--shadow-lift); }
+#tip { position: fixed; z-index: 50; pointer-events: none; background: var(--color-navy); color: var(--color-on-navy); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-input); font-size: var(--text-sm); line-height: 1.5; max-width: 280px; opacity: 0; transition: opacity 80ms linear; box-shadow: var(--shadow-lift); }
 #tip b { font-weight: 700; }
 
 /* ───── 글 묶음 ───── */
@@ -241,15 +256,15 @@ td.heat { position: relative; }
 .policy article { border: 1px solid var(--color-rule); border-radius: var(--radius-card); padding: var(--space-lg) var(--space-xl); background: var(--color-surface); box-shadow: var(--shadow-card); }
 .policy h3 { font-size: var(--text-lg); font-weight: 700; letter-spacing: -0.02em; display: flex; gap: var(--space-sm); align-items: center; flex-wrap: wrap; }
 .policy p { margin: var(--space-xs) 0 0; color: var(--color-ink-2); max-width: 70ch; }
-.policy .ev { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-ink); background: var(--color-paper-2); border-radius: var(--radius-input); padding: var(--space-sm) var(--space-md); }
+.policy .ev { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-ink); background: var(--color-cream); border-radius: var(--radius-input); padding: var(--space-sm) var(--space-md); }
 .empty { color: var(--color-muted); font-size: var(--text-md); padding: var(--space-lg); text-align: center; border: 1px dashed var(--color-rule); border-radius: var(--radius-card); }
 .note { color: var(--color-muted); font-size: var(--text-sm); }
 .kv { display: grid; grid-template-columns: auto 1fr; gap: var(--space-2xs) var(--space-lg); font-size: var(--text-md); }
 .kv dt { color: var(--color-muted); } .kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
-.log { max-height: 280px; overflow: auto; font-family: var(--font-code); font-size: var(--text-xs); background: var(--color-ink); color: var(--color-paper); border-radius: var(--radius-input); padding: var(--space-sm) var(--space-md); }
+.log { max-height: 280px; overflow: auto; font-family: var(--font-code); font-size: var(--text-xs); background: var(--color-navy); color: var(--color-on-navy); border-radius: var(--radius-input); padding: var(--space-sm) var(--space-md); }
 .log div { white-space: nowrap; }
 .log .ok { color: var(--color-log-ok); } .log .bad { color: var(--color-log-bad); }
-pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color: var(--color-paper); border-radius: var(--radius-input); padding: var(--space-md); font-size: var(--text-xs); font-family: var(--font-code); margin: 0; }
+pre.raw { max-height: 320px; overflow: auto; background: var(--color-navy); color: var(--color-on-navy); border-radius: var(--radius-input); padding: var(--space-md); font-size: var(--text-xs); font-family: var(--font-code); margin: 0; }
 .row { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; }
 .mapbox { position: relative; }
 
@@ -313,12 +328,12 @@ pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color
 .ch-quick .top { display: flex; gap: var(--space-xs); overflow-x: auto; padding-bottom: var(--space-xs); scrollbar-width: none; position: static; background: none; border: 0; }
 .ch-quick .top button { white-space: nowrap; }
 .ch-form { display: flex; gap: var(--space-sm); padding: var(--space-sm) var(--space-md) var(--space-xs); align-items: flex-end; }
-.ch-form textarea { flex: 1; resize: none; border: 1px solid var(--color-muted); border-radius: var(--radius-input); padding: var(--space-sm) var(--space-md); font-size: var(--text-md); background: var(--color-surface); min-height: 40px; max-height: 160px; line-height: 1.5; }
+.ch-form textarea { flex: 1; resize: none; border: 1px solid var(--color-input); border-radius: var(--radius-input); padding: var(--space-sm) var(--space-md); font-size: var(--text-md); background: var(--color-surface); min-height: 40px; max-height: 160px; line-height: 1.5; }
 .ch-foot { display: flex; justify-content: space-between; align-items: center; gap: var(--space-sm); padding: 0 var(--space-md) var(--space-sm); font-size: var(--text-xs); color: var(--color-muted); }
 .ch-opts { display: flex; gap: var(--space-2xs); flex-shrink: 0; }
 .ch-opts select { min-height: 28px; border: 1px solid var(--color-rule); background: var(--color-surface); border-radius: var(--radius-xs); font-size: var(--text-xs); padding: 0 var(--space-xs); color: var(--color-ink-2); }
 #chFab { position: fixed; right: calc(var(--space-lg) + env(safe-area-inset-right, 0px)); bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px)); z-index: 25; min-height: 44px; border: 0; border-radius: var(--radius-card); background: var(--color-accent); color: var(--color-accent-ink); padding: 0 var(--space-lg); font-weight: 700; font-size: var(--text-base); cursor: pointer;
-  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--color-glint) 35%, transparent), 0 0 0 1px var(--color-accent-deep), 0 3px 0 var(--color-accent-deep), var(--shadow-lift); transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-micro) var(--ease-out); }
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--color-glint) 35%, transparent), 0 0 0 1px var(--color-press), 0 3px 0 var(--color-press), var(--shadow-lift); transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-micro) var(--ease-out); }
 #chFab:hover { background: var(--color-accent-deep); }
 #chFab:active { transform: translateY(3px); }
 #chFab span { opacity: .85; font-weight: 400; font-size: var(--text-sm); margin-left: var(--space-xs); }
@@ -331,6 +346,7 @@ pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color
 </style>
 </head>
 <body>
+<div class="mesh" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
     <div class="brand"><h1>제주 의료접근성 관측소</h1><span class="pill" id="verPill" title="HTML판 버전">HTML v1.2</span><small>공공데이터 API 4종 실시간 결합</small></div>
@@ -350,7 +366,7 @@ pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color
 </header>
 <nav class="tabs" aria-label="보기">
   <div class="wrap">
-    <a href="#overview">개요</a><a href="#compare">지역 비교</a><a href="#quadrant">고령화×공급</a>
+    <a href="#overview">개요</a><a href="#summary">총괄 현황</a><a href="#compare">지역 비교</a><a href="#quadrant">고령화×공급</a>
     <a href="#trend">연도 변화</a><a href="#hours">휴일·야간</a><a href="#profile">읍면동 프로필</a>
     <a href="#map">기관 지도</a><a href="#policy">정책 함의</a><a href="#api">API 연결</a>
   </div>
@@ -375,14 +391,18 @@ pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color
     <!-- 개요 -->
     <section class="view" id="v-overview" hidden>
       <div class="kpis" id="kpis"></div>
+      <div class="card"><div class="card-head"><div><h2 id="ovBarTitle">고령 인구 대비 의원 수</h2><div class="sub">점선은 제주 전체 평균. 막대를 누르면 프로필로 이동합니다.</div></div></div>
+        <div class="chart" id="ovBar"></div><div class="src">자료: 행정안전부 법정동별 인구, 건강보험심사평가원 병원정보 (data.go.kr)</div></div>
+    </section>
+
+    <!-- 총괄 현황 -->
+    <section class="view" id="v-summary" hidden>
       <div class="grid2">
-        <div class="card"><div class="card-head"><div><h2>지금 데이터가 말하는 것</h2><div class="sub">현재 조건으로 자동 작성한 핵심 발견. 조건이나 API 자료가 바뀌면 문장도 바뀝니다.</div></div><button class="btn ask" type="button" data-ask="지금 개요 화면의 핵심 발견을 정책 담당자가 이해하기 쉽게 해설해 줘. 수치는 도구로 확인해서 써 줘.">Claude 해설</button></div>
+        <div class="card"><div class="card-head"><div><h2>지금 데이터가 말하는 것</h2><div class="sub">현재 조건으로 자동 작성한 핵심 발견. 조건이나 API 자료가 바뀌면 문장도 바뀝니다.</div></div><button class="btn ask" type="button" data-ask="지금 총괄 현황 화면의 핵심 발견을 정책 담당자가 이해하기 쉽게 해설해 줘. 수치는 도구로 확인해서 써 줘.">Claude 해설</button></div>
           <ol class="findings" id="findings"></ol></div>
         <div class="card"><div class="card-head"><div><h2>읍·면, 동 지역, 제주 전체</h2><div class="sub">같은 지표를 세 범위로 나란히 봅니다.</div></div></div>
           <div class="tbl-wrap" id="tierTable"></div></div>
       </div>
-      <div class="card"><div class="card-head"><div><h2 id="ovBarTitle">고령 인구 대비 의원 수</h2><div class="sub">점선은 제주 전체 평균. 막대를 누르면 프로필로 이동합니다.</div></div></div>
-        <div class="chart" id="ovBar"></div><div class="src">자료: 행정안전부 법정동별 인구, 건강보험심사평가원 병원정보 (data.go.kr)</div></div>
     </section>
 
     <!-- 지역 비교 -->
@@ -394,7 +414,7 @@ pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color
         <div class="chart" id="cmpBar"></div>
       </div>
       <div class="card">
-        <div class="card-head"><div><h2>제주 전체 대비 지수표 (전체 = 100)</h2><div class="sub">칸 색: 파랑은 접근성이 전체보다 나음, 빨강은 부족함. 고령화율은 높을수록 수요가 큰 것으로 봅니다. 열 제목을 누르면 정렬됩니다.</div></div>
+        <div class="card-head"><div><h2>제주 전체 대비 지수표 (전체 = 100)</h2><div class="sub">칸 색: 보라는 접근성이 전체보다 나음, 분홍은 부족함. 고령화율은 높을수록 수요가 큰 것으로 봅니다. 열 제목을 누르면 정렬됩니다.</div></div>
           <button class="btn" type="button" id="copyCsv">표를 CSV로 복사</button></div>
         <div class="tbl-wrap" id="heatTable"></div>
       </div>
@@ -447,7 +467,7 @@ pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color
       <div class="grid2">
         <div class="card"><div class="card-head"><div><h2>성·연령 구조</h2><div class="sub">지역 인구 대비 비율(%). 테두리 표시는 제주 전체 비율</div></div><div class="legend" id="pyrLegend"></div></div>
           <div class="chart" id="pyramid"></div></div>
-        <div class="card"><div class="card-head"><div><h2>전체·유형 평균 대비</h2><div class="sub">0 = 제주 전체와 같음. 오른쪽(파랑)일수록 접근성이 좋음</div></div></div>
+        <div class="card"><div class="card-head"><div><h2>전체·유형 평균 대비</h2><div class="sub">0 = 제주 전체와 같음. 오른쪽(보라)일수록 접근성이 좋음</div></div></div>
           <div class="chart" id="pfIndex"></div></div>
       </div>
       <div class="card"><div class="card-head"><div><h2>지역 안의 의료기관</h2><div class="sub">심평원 기관 정보와 국립중앙의료원 진료시간을 이름·좌표로 맞춰 붙였습니다.</div></div></div>
@@ -583,7 +603,7 @@ pre.raw { max-height: 320px; overflow: auto; background: var(--color-ink); color
 <script>
 "use strict";
 /* 구글 Apps Script 중계 주소 (웹 앱 배포 후 받은 …/exec 주소를 따옴표 안에 넣으세요). 공공데이터 인증키는 여기에 넣지 않습니다. */
-var RELAY_URL = "https://script.google.com/macros/s/AKfycbw4fj9FUhqGJJTSr7erIpV-r19YNEajm3XXvhBf53YF2RpD8cPvCmdRF4eZhoNb61KI/exec";
+var RELAY_URL = "";
 const relayUrl = () => String(RELAY_URL || "").trim();
 /* ───────────── 0. 공통 도구 ───────────── */
 const $ = (s, el = document) => el.querySelector(s);
@@ -1155,14 +1175,17 @@ function renderOverview() {
     c.hoursOk ? tile(`평일 ${S.p.night / 100}시 이후 진료 중 읍·면`, `${fmt(e.night)}`, `곳 / ${fmt(a.night)}곳`, 0, `읍·면 인구 비중은 ${pct(e.total, a.total)}`, a.night ? e.night / a.night * 100 : 0) : tile("휴일·야간 진료", "–", "", 0, "진료시간은 최신 시점에만 있습니다", null),
     tile("공공보건기관 중 읍·면 소재", `${fmt(e.public)}`, `곳 / ${fmt(a.public)}곳`, 0, "보건소·보건지소·보건진료소", a.public ? e.public / a.public * 100 : 0),
   ].join("");
-  // 세 범위 비교표
+  const rows = [...c.units].sort((x, y) => (x.primPerOld ?? -1) - (y.primPerOld ?? -1)).map(u => ({ key: u.key, label: u.label, v: u.primPerOld, color: unitColor(u), tip: unitTip(u, c), na: `${scopeLabel()} 없음` }));
+  $("#ovBarTitle").textContent = METRICS.primPerOld.l();
+  hbar($("#ovBar"), S.p.unit === "dong" ? rows.slice(0, 30) : rows, { ref: a.primPerOld, d: 2, aria: "지역별 고령 인구 대비 의원 수" });
+  if (S.p.unit === "dong") $("#ovBar").insertAdjacentHTML("beforeend", `<p class="note">법정동 단위에서는 낮은 30곳만 표시합니다. 전체는 지역 비교 보기에서 볼 수 있습니다.</p>`);
+}
+/* 총괄 현황: 세 범위 비교표와 자동 작성 핵심 발견 */
+function renderSummary() {
+  const { c, cmp } = ctx(), a = c.all, e = c.emd;
   const keys = ["total", "old", "oldRate", "prim", "primPerOld", "popPerPrim", "public", ...(c.hoursOk ? ["sunP", "holP", "nightP"] : [])];
   $("#tierTable").innerHTML = `<table><thead><tr><th>지표</th><th class="n">읍·면</th><th class="n">동 지역</th><th class="n">제주 전체</th></tr></thead><tbody>${keys.map(k => `<tr><td>${esc(METRICS[k]?.l() || "공공보건기관")}</td>${[e, c.dong, a].map(u => `<td class="n">${fmt(mv(u, k), METRICS[k]?.d ?? 0)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
   $("#findings").innerHTML = findings(c, cmp).map(f => `<li><span>${f}</span></li>`).join("");
-  $("#ovBarTitle").textContent = METRICS.primPerOld.l();
-  const rows = [...c.units].sort((x, y) => (x.primPerOld ?? -1) - (y.primPerOld ?? -1)).map(u => ({ key: u.key, label: u.label, v: u.primPerOld, color: unitColor(u), tip: unitTip(u, c), na: `${scopeLabel()} 없음` }));
-  hbar($("#ovBar"), S.p.unit === "dong" ? rows.slice(0, 30) : rows, { ref: a.primPerOld, d: 2, aria: "지역별 고령 인구 대비 의원 수" });
-  if (S.p.unit === "dong") $("#ovBar").insertAdjacentHTML("beforeend", `<p class="note">법정동 단위에서는 낮은 30곳만 표시합니다. 전체는 지역 비교 보기에서 볼 수 있습니다.</p>`);
 }
 function findings(c, cmp) {
   const a = c.all, e = c.emd, out = [];
@@ -1417,7 +1440,7 @@ function dataChecks() {
 }
 
 /* ───────────── 9. 화면 전환·이벤트 ───────────── */
-const VIEWS = { overview: renderOverview, compare: renderCompare, quadrant: renderQuadrant, trend: renderTrend, hours: renderHours, profile: renderProfile, map: renderMap, policy: renderPolicy, api: renderApi };
+const VIEWS = { overview: renderOverview, summary: renderSummary, compare: renderCompare, quadrant: renderQuadrant, trend: renderTrend, hours: renderHours, profile: renderProfile, map: renderMap, policy: renderPolicy, api: renderApi };
 const curView = () => { const h = location.hash.slice(1); return VIEWS[h] ? h : "overview"; };
 function renderView() {
   const v = curView();
@@ -1497,7 +1520,7 @@ document.addEventListener("touchstart", e => { const el = e.target.closest?.("[d
 const SDK_URL = "https://cdn.jsdelivr.net/npm/@anthropic-ai/sdk@0.135.0/+esm";
 const PRICE = { "claude-opus-5-5": [4, 20, 0.2], "claude-sonnet-5-5": [2, 10, 0.2], "claude-haiku-5-5": [0.1, 0.5, 0.01] }; // 100만 토큰당 $ (입력, 출력, 캐시 읽기)
 const MODEL_NAME = { "claude-opus-5-5": "Opus 5.5", "claude-sonnet-5-5": "Sonnet 5.5", "claude-haiku-5-5": "Haiku 5.5" };
-const VIEW_NAME = { overview: "개요", compare: "지역 비교", quadrant: "고령화×공급", trend: "연도 변화", hours: "휴일·야간", profile: "읍면동 프로필", map: "기관 지도", policy: "정책 함의", api: "API 연결" };
+const VIEW_NAME = { overview: "개요", summary: "총괄 현황", compare: "지역 비교", quadrant: "고령화×공급", trend: "연도 변화", hours: "휴일·야간", profile: "읍면동 프로필", map: "기관 지도", policy: "정책 함의", api: "API 연결" };
 const CH = {
   msgs: ls.get("jeju.chat.msgs", []), log: ls.get("jeju.chat.log", []).filter(x => x.role !== "error"),
   usage: ls.get("jeju.chat.usage", { in: 0, out: 0, cr: 0, cw: 0, cost: 0 }),
